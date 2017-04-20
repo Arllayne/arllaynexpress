@@ -7,13 +7,68 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">  
 
     <h:head>  
-        <!--<link rel="stylesheet" href="CSS/styleTplt.css"/>-->
-        <link rel="stylesheet" href="CSS/style.css"/>
-        <title> - arllaynexpress - </title>
+        <title>Arllaynexpress</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+        <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
     </h:head>        
     <h:body>  
-        <ui:insert name="conteudo">
+       <!-- Wrapper -->
+        <div id="wrapper">
 
-        </ui:insert>
+            <!-- Header -->
+            <header id="header" class="alt">
+                <a href="index.html" class="logo"><strong>Forty</strong> <span>by HTML5 UP</span></a>
+                <nav>
+                    <a href="#menu">Menu</a>
+                </nav>
+            </header>
+
+            <!-- Menu -->
+            <nav id="menu">
+                <ul class="links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="landing.html">Landing</a></li>
+                    <li><a href="generic.html">Genérico</a></li>
+                    <li><a href="elements.html">Elementos</a></li>
+                </ul>
+                <ul class="actions vertical">
+                    <li><a href="#" class="button special fit">INICIAR</a></li>
+                    <li><a href="#" class="button fit">Logar</a></li>
+                </ul>
+            </nav>
+
+            <!-- Banner -->
+            <section id="banner" class="major">
+                <ui:insert name="conteudo"></ui:insert>
+            </section>
+
+            <!-- Main -->
+           
+            <!-- Contact -->
+            
+            <!-- Footer -->
+            <footer id="footer">
+                <div class="inner">
+                    
+                    <ul class="copyright">
+                        <li>Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+                    </ul>
+                </div>
+            </footer>
+
+        </div>
+
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/skel.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+        <script src="assets/js/main.js"></script>
     </h:body>  
 </html>  

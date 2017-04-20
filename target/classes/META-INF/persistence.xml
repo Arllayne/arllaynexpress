@@ -11,16 +11,4 @@
       <!--<property name="javax.persistence.schema-generation.database.action" value="create"/>-->
     </properties>
   </persistence-unit>
-  <persistence-unit name="DEFAULT_PU" transaction-type="JTA">
-    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-    <jta-data-source>jdbc/sample</jta-data-source>
-    <class>org.arllaynexpress.modelo.Cliente</class>
-    <class>org.arllaynexpress.modelo.Pagamento</class>
-    <class>org.arllaynexpress.modelo.Lugar</class>
-    <class>org.arllaynexpress.modelo.Passagem</class>
-    <exclude-unlisted-classes>false</exclude-unlisted-classes>
-    <properties>
-      <property name="javax.persistence.schema-generation.database.action" value="create"/>
-    </properties>
-  </persistence-unit>
 </persistence>
