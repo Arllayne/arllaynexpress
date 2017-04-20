@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" pkg="org.arllaynexpress.modelo" v="2.6" sm="false" xs="false" id="_14927086178381" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
+    <jpa:entity xre="false" compositePrimaryKeyClass="ClientePK" abs="false" class="Cliente" visibile="true" minimized="false" rootElement="_14927086178381" id="_1492708630849">
+        <jpa:ts e="true"/>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" visibile="true" name="nome" id="_14927086480844"/>
+            <jpa:basic attribute-type="java.sql.Date" visibile="true" name="data_nasc" id="_14927086581925">
+                <jpa:bv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" visibile="true" name="sexo" id="_14927086983516"/>
+            <jpa:basic attribute-type="String" visibile="true" name="email" id="_14927087121657">
+                <jpa:bv/>
+            </jpa:basic>
+            <jpa:one-to-many own="true" collection-type="java.util.List" connected-entity-id="_1492708871418" visibile="true" name="passagems" id="_149270926097222"/>
+            <jpa:id attribute-type="Long" visibile="true" name="id" id="_14927086309892">
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Cliente.findAll">
+            <jpa:query>Select e from Cliente e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Cliente.findByNome">
+            <jpa:query>Select c from Cliente c where c.nome=:nome</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Cliente.findByData_nasc">
+            <jpa:query>Select c from Cliente c where c.data_nasc=:data_nasc</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Cliente.findBySexo">
+            <jpa:query>Select c from Cliente c where c.sexo=:sexo</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Cliente.findByEmail">
+            <jpa:query>Select c from Cliente c where c.email=:email</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="PagamentoPK" abs="false" class="Pagamento" visibile="true" minimized="false" rootElement="_14927086178381" id="_1492708749644">
+        <jpa:ts e="true"/>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" visibile="true" name="forma_pagamento" id="_149270876730210">
+                <jpa:bv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" visibile="true" name="quant_parcelas" id="_149270882517011"/>
+            <jpa:id attribute-type="Long" visibile="true" name="id" id="_14927087496448">
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Pagamento.findAll">
+            <jpa:query>Select e from Pagamento e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Pagamento.findByForma_pagamento">
+            <jpa:query>Select p from Pagamento p where p.forma_pagamento=:forma_pagamento</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Pagamento.findByQuant_parcelas">
+            <jpa:query>Select p from Pagamento p where p.quant_parcelas=:quant_parcelas</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="LugarPK" abs="false" class="Lugar" visibile="true" minimized="false" rootElement="_14927086178381" id="_1492708841561">
+        <jpa:ts e="true"/>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" visibile="true" name="origem" id="_149270885505414"/>
+            <jpa:basic attribute-type="String" visibile="true" name="destino" id="_149270886153915"/>
+            <jpa:id attribute-type="Long" visibile="true" name="id" id="_149270884156112">
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Lugar.findAll">
+            <jpa:query>Select e from Lugar e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Lugar.findByOrigem">
+            <jpa:query>Select l from Lugar l where l.origem=:origem</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Lugar.findByDestino">
+            <jpa:query>Select l from Lugar l where l.destino=:destino</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity lbl-ref="_149270887141816" xre="false" compositePrimaryKeyClass="PassagemPK" abs="false" class="Passagem" visibile="true" minimized="false" rootElement="_14927086178381" id="_1492708871418">
+        <jpa:ts e="true"/>
+        <jpa:hc e="true"/>
+        <jpa:eq e="true"/>
+        <jpa:attributes>
+            <jpa:basic attribute-type="java.sql.Date" visibile="true" name="ida" id="_149270888407818">
+                <jpa:bv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="java.sql.Date" visibile="true" name="volta" id="_149270893204919">
+                <jpa:bv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="int" visibile="true" name="quant_adulto" id="_149270906399820">
+                <jpa:bv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="int" visibile="true" name="quant_crianca" id="_149270911373621">
+                <jpa:bv/>
+            </jpa:basic>
+            <jpa:many-to-one primaryKey="false" connected-entity-id="_1492708841561" visibile="true" name="lugar" id="_149270931676324"/>
+            <jpa:one-to-one own="true" primaryKey="false" connected-entity-id="_1492708749644" visibile="true" name="pagamento" id="_149270927578623"/>
+            <jpa:id attribute-type="Long" visibile="true" name="id" id="_149270887141816">
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Passagem.findAll">
+            <jpa:query>Select e from Passagem e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Passagem.findByIda">
+            <jpa:query>Select p from Passagem p where p.ida=:ida</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Passagem.findByVolta">
+            <jpa:query>Select p from Passagem p where p.volta=:volta</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Passagem.findByQuant_adulto">
+            <jpa:query>Select p from Passagem p where p.quant_adulto=:quant_adulto</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Passagem.findByQuant_crianca">
+            <jpa:query>Select p from Passagem p where p.quant_crianca=:quant_crianca</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:snp e="true" loc="BEFORE_PACKAGE">/**
+ * This file was generated by the JPA Modeler
+ */</jpa:snp>
+    <jpa:diagram>
+        <plane elementRef="_14927086178381">
+            <shape elementRef="_1492708630849">
+                <Bounds x="60.0" y="40.0" width="135.0" height="189.0"/>
+            </shape>
+            <shape elementRef="_1492708749644">
+                <Bounds x="396.0" y="279.0" width="161.0" height="113.0"/>
+            </shape>
+            <shape elementRef="_1492708841561">
+                <Bounds x="525.0" y="52.0" width="129.0" height="113.0"/>
+            </shape>
+            <shape elementRef="_1492708871418">
+                <Bounds x="286.0" y="40.0" width="157.0" height="210.0"/>
+            </shape>
+        </plane>
+    </jpa:diagram>
+</jpa:entity-mappings>

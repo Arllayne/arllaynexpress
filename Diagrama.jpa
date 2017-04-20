@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" v="2.6" sm="false" xs="false" id="_14926856629571" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
+    <jpa:entity xre="false" compositePrimaryKeyClass="PassagemPK" abs="false" class="Passagem" visibile="true" minimized="false" rootElement="_14926856629571" id="_1492685685795">
+        <jpa:ts e="true"/>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" visibile="true" name="ida" id="_14927070776504"/>
+            <jpa:basic attribute-type="String" visibile="true" name="volta" id="_14927070984645"/>
+            <jpa:basic attribute-type="int" visibile="true" name="adulto" id="_14927071164256">
+                <jpa:bv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="int" visibile="true" name="crianca" id="_14927071200347">
+                <jpa:bv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="double" visibile="true" name="valor" id="_149270733635212">
+                <jpa:bv/>
+            </jpa:basic>
+            <jpa:many-to-one primaryKey="false" connected-entity-id="_1492707541865" visibile="true" name="lugar" id="_149270771281627"/>
+            <jpa:id attribute-type="Long" visibile="true" name="id" id="_14926856860212">
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Passagem.findAll">
+            <jpa:query>Select e from Passagem e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Passagem.findByIda">
+            <jpa:query>Select p from Passagem p where p.ida=:ida</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Passagem.findByVolta">
+            <jpa:query>Select p from Passagem p where p.volta=:volta</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Passagem.findByAdulto">
+            <jpa:query>Select p from Passagem p where p.adulto=:adulto</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Passagem.findByCrianca">
+            <jpa:query>Select p from Passagem p where p.crianca=:crianca</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Passagem.findByValor">
+            <jpa:query>Select p from Passagem p where p.valor=:valor</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="PagamentoPK" abs="false" class="Pagamento" visibile="true" minimized="false" rootElement="_14926856629571" id="_1492707235774">
+        <jpa:ts e="true"/>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" visibile="true" name="formaDePagamento" id="_149270725737310">
+                <jpa:bv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" visibile="true" name="quatparcelas" id="_149270726660311">
+                <jpa:bv/>
+            </jpa:basic>
+            <jpa:one-to-one own="true" primaryKey="false" connected-entity-id="_1492685685795" visibile="true" name="passagem" id="_149270781874728"/>
+            <jpa:id attribute-type="Long" visibile="true" name="id" id="_14927072357748">
+                <jpa:bv/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Pagamento.findAll">
+            <jpa:query>Select e from Pagamento e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Pagamento.findByFormaDePagamento">
+            <jpa:query>Select p from Pagamento p where p.formaDePagamento=:formaDePagamento</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Pagamento.findByQuatparcelas">
+            <jpa:query>Select p from Pagamento p where p.quatparcelas=:quatparcelas</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="ClientePK" abs="false" class="Cliente" visibile="true" minimized="false" rootElement="_14926856629571" id="_1492707445428">
+        <jpa:ts e="true"/>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" visibile="true" name="nome" id="_149270748640315"/>
+            <jpa:basic attribute-type="String" visibile="true" name="sobrenome" id="_149270749032716"/>
+            <jpa:basic attribute-type="java.sql.Date" visibile="true" name="datadenascimento" id="_149270749413917">
+                <jpa:bv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="long" visibile="true" name="cpf" id="_149270750237418">
+                <jpa:bv/>
+            </jpa:basic>
+            <jpa:one-to-many own="true" collection-type="java.util.List" connected-entity-id="_1492685685795" visibile="true" name="passagems" id="_149270767312126"/>
+            <jpa:id attribute-type="Long" visibile="true" name="id" id="_149270744542813">
+                <jpa:bv/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Cliente.findAll">
+            <jpa:query>Select e from Cliente e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Cliente.findByNome">
+            <jpa:query>Select c from Cliente c where c.nome=:nome</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Cliente.findBySobrenome">
+            <jpa:query>Select c from Cliente c where c.sobrenome=:sobrenome</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Cliente.findByDatadenascimento">
+            <jpa:query>Select c from Cliente c where c.datadenascimento=:datadenascimento</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Cliente.findByCpf">
+            <jpa:query>Select c from Cliente c where c.cpf=:cpf</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Cliente.findByAttribute">
+            <jpa:query>Select c from Cliente c where c.attribute=:attribute</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Cliente.findByAttribute1">
+            <jpa:query>Select c from Cliente c where c.attribute1=:attribute1</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Cliente.findByAttribute2">
+            <jpa:query>Select c from Cliente c where c.attribute2=:attribute2</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="LugarPK" abs="false" class="Lugar" visibile="true" minimized="false" rootElement="_14926856629571" id="_1492707541865">
+        <jpa:ts e="true"/>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" visibile="true" name="origem" id="_149270760540724"/>
+            <jpa:basic attribute-type="String" visibile="true" name="destino" id="_149270761001625"/>
+            <jpa:id attribute-type="Long" visibile="true" name="id" id="_149270754186522">
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Lugar.findAll">
+            <jpa:query>Select e from Lugar e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Lugar.findByOrigem">
+            <jpa:query>Select l from Lugar l where l.origem=:origem</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Lugar.findByDestino">
+            <jpa:query>Select l from Lugar l where l.destino=:destino</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:snp e="true" loc="BEFORE_PACKAGE">/**
+ * This file was generated by the JPA Modeler
+ */</jpa:snp>
+    <jpa:diagram>
+        <plane elementRef="_14926856629571">
+            <shape elementRef="_1492685685795">
+                <Bounds x="366.0" y="113.0" width="157.0" height="210.0"/>
+            </shape>
+            <shape elementRef="_1492707235774">
+                <Bounds x="599.0" y="132.0" width="162.0" height="147.0"/>
+            </shape>
+            <shape elementRef="_1492707445428">
+                <Bounds x="78.0" y="18.0" width="153.0" height="189.0"/>
+            </shape>
+            <shape elementRef="_1492707541865">
+                <Bounds x="102.0" y="248.0" width="129.0" height="113.0"/>
+            </shape>
+        </plane>
+    </jpa:diagram>
+</jpa:entity-mappings>
