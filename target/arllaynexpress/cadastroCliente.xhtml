@@ -6,6 +6,31 @@
              xmlns:f="http://xmlns.jcp.org/jsf/core">  
 
     <ui:define name="conteudo">
-        Teste
+        <div class="inner">
+            <header class="major">
+                <h1>Hi, you're at Arllaynexpress</h1>
+            </header>
+            
+        </div>
+        <section>
+            <form method="post" action="#">
+                <div class="field half first">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" />
+                </div>
+                <div class="field half">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email" />
+                </div>
+                <div class="field half first">
+                    <label for="data_nasc">Data de nascimento</label>
+                    <h:inputText/>
+                </div>
+                <ul class="actions">
+                    <li><input type="submit" value="Send Message" class="special" /></li>
+                    <li><input type="reset" value="Clear" /></li>
+                </ul>
+            </form>
+        </section>
     </ui:define>
 </ui:decorate>  
