@@ -1,16 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package org.arllaynexpress.modelo;
 
 import java.io.Serializable;
+import java.sql.Date;
+import java.util.List;
+import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+import javax.persistence.OneToMany;
 /**
  *
  * @author ArllayneC
@@ -19,7 +18,7 @@ import javax.persistence.Id;
 public class Usuario implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String nome;
     private String cpf;
@@ -126,9 +125,5 @@ public class Usuario implements Serializable {
         this.sexo = sexo;
     }
 
-    @Override
-    public String toString() {
-        return "Usuario{" + "id=" + id + ", nome=" + nome + ", cpf=" + cpf + ", endere\u00e7o=" + endereço + ", Email=" + Email + ", telefone=" + telefone + ", sexo=" + sexo + '}';
-    }
     
 }

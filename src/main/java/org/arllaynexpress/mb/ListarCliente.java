@@ -21,9 +21,10 @@ public class ListarCliente {
     @Inject
     private ClienteDAO dao;
     private List<Cliente> clientes;
+    Cliente cliente = new Cliente();
 
     @PostConstruct
-    private void init() {
+    public void init() {
         this.clientes = dao.buscarTodos();
     }
 

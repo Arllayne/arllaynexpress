@@ -13,7 +13,7 @@
 
         </div>
         <section>
-            <h:form>
+            <h:form id="panel">
                 <div class="field half first">
                     <label for="name">Nome</label>
                     <!--<input type="text" name="name" id="name" />-->
@@ -39,9 +39,15 @@
                 <ul class="actions">
                     <li>
                         <h:commandButton value="Cadastrar" 
-                                         action="#{mbCadastrarUsuario.adicionar()}" />
+                                         action="#{mbCadastrarUsuario.adicionar()}" >
+                            <!--<p:resetInput target="panel" />-->
+                        </h:commandButton>
                     </li>
-                    <li><input type="reset" value="Limpar" /></li>
+                    <li>
+                        <h:commandButton value="Reset Non-Ajax" immediate="true" style="margin-right:20px;">
+                            <p:resetInput target="panel" />
+                        </h:commandButton>
+                    </li>
                 </ul>
             </h:form>
         </section>

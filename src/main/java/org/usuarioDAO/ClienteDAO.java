@@ -28,7 +28,7 @@ public class ClienteDAO {
 
     public List<Cliente> buscarTodos() {
         TypedQuery<Cliente> query = em.
-                createQuery("Select c from Pagamento c", Cliente.class);
+                createQuery("Select c from Cliente c", Cliente.class);
         return query.getResultList();
     }
 
