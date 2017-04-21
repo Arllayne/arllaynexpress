@@ -10,27 +10,46 @@
             <header class="major">
                 <h1>Hi, you're at Arllaynexpress</h1>
             </header>
-            
+
         </div>
         <section>
-            <form method="post" action="#">
+            <h:form id="panel">
                 <div class="field half first">
-                    <label for="name">Name</label>
-                    <input type="text" name="name" id="name" />
+                    <label for="name">Nome</label>
+                    <!--<input type="text" name="name" id="name" />-->
+                    <h:inputText value="#{mbCadastrarUsuario.usuario.nome}"/>
                 </div>
                 <div class="field half">
                     <label for="email">Email</label>
-                    <input type="text" name="email" id="email" />
+                    <!--<input type="text" name="email" id="email" />-->
+                    <h:inputText value="#{mbCadastrarUsuario.usuario.email}"/>
                 </div>
                 <div class="field half first">
-                    <label for="data_nasc">Data de nascimento</label>
-                    <h:inputText/>
+                    <label for="data_nasc">CPF</label>
+                    <!--<h:inputText/>-->
+                    <h:inputText value="#{mbCadastrarUsuario.usuario.cpf}"/>
+                </div>
+                <div class="field half first">
+                    <label for="sexo"> Sexo </label>
+                    <h:selectOneRadio value="#{mbCadastrarUsuario.usuario.sexo}">
+                        <f:selectItem itemValue="Feminino" itemLabel="Feminino" />
+                        <f:selectItem itemValue="Masculino" itemLabel="Masculino" />
+                    </h:selectOneRadio>
                 </div>
                 <ul class="actions">
-                    <li><input type="submit" value="Send Message" class="special" /></li>
-                    <li><input type="reset" value="Clear" /></li>
+                    <li>
+                        <h:commandButton value="Cadastrar" 
+                                         action="#{mbCadastrarUsuario.adicionar()}" >
+                            <!--<p:resetInput target="panel" />-->
+                        </h:commandButton>
+                    </li>
+                    <li>
+                        <h:commandButton value="Reset Non-Ajax" immediate="true" style="margin-right:20px;">
+                            <p:resetInput target="panel" />
+                        </h:commandButton>
+                    </li>
                 </ul>
-            </form>
+            </h:form>
         </section>
     </ui:define>
 </ui:decorate>  

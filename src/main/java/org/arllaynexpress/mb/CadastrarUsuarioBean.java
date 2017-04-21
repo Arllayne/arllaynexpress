@@ -17,7 +17,7 @@ public class CadastrarUsuarioBean {
 
     public void adicionar() {
         usuarioDAO.salvar(usuario);
-        //System.out.println(produto);
+        //System.out.println(usuario);
     }
 
     public Usuario getUsuario() {

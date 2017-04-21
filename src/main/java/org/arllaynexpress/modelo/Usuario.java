@@ -26,6 +26,7 @@ public class Usuario implements Serializable {
     private String endereço;
     private String Email;
     private String telefone;
+    private String sexo;
 
     /**
      * @return the nome
@@ -111,9 +112,23 @@ public class Usuario implements Serializable {
         this.id = id;
     }
 
-    @Override
-    public String toString() {
-        return "Usuario{" + "id=" + id + ", nome=" + nome + ", cpf=" + cpf + ", endere\u00e7o=" + endereço + ", Email=" + Email + ", telefone=" + telefone + '}';
+    /**
+     * @return the sexo
+     */
+    public String getSexo() {
+        return sexo;
     }
 
+    /**
+     * @param sexo the sexo to set
+     */
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario{" + "id=" + id + ", nome=" + nome + ", cpf=" + cpf + ", endere\u00e7o=" + endereço + ", Email=" + Email + ", telefone=" + telefone + ", sexo=" + sexo + '}';
+    }
+    
 }
