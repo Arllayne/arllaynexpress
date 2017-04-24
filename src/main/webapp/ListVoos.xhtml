@@ -1,0 +1,41 @@
+<ui:decorate xmlns="http://www.w3.org/1999/xhtml"  
+             xmlns:h="http://java.sun.com/jsf/html"    
+             xmlns:p="http://primefaces.org/ui"
+             xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+             template="template.xhtml"
+             xmlns:f="http://xmlns.jcp.org/jsf/core">  
+
+    <ui:define name="conteudo">
+        <div class="inner">
+            <header class="major">
+                <h1>Hi, you're at Arllaynexpress</h1>
+            </header>
+
+        </div>
+        <section>
+           <p:growl id="msgs" showDetail="true" />
+                <p:dataTable id="usuarios" var="usuarios" widgetVar="usuarioTable"
+                             value="#{mbListarVoos.voos}"
+                             paginator="true" rows="5"
+                             emptyMessage="sem registros" paginatorPosition="bottom"
+                             paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                             rowsPerPageTemplate="5,10,15">
+                    <f:facet name="header">
+                        <p:outputPanel>
+                            <h:outputText value="Pesquisar em todos os campos:" />
+                            <p:inputText id="globalFilter" onkeyup="PF('localTable').filter()" style="width:150px" placeholder="Pressione uma tecla"/>
+                        </p:outputPanel>
+                    </f:facet>
+
+                    <p:column headerText="horario">
+                        <h:outputText value="#{vooss.horario}"/>
+                    </p:column>
+                    
+                    <f:facet name="footer">
+              
+                        No total de voos temos: #{mbListaarVoos.voos.size()}.
+                    </f:facet>
+                </p:dataTable>
+        </section>
+    </ui:define>
+</ui:decorate>  

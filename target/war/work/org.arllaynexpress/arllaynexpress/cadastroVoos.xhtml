@@ -1,0 +1,75 @@
+<ui:decorate xmlns="http://www.w3.org/1999/xhtml"  
+             xmlns:h="http://java.sun.com/jsf/html"    
+             xmlns:p="http://primefaces.org/ui"
+             xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+             template="template.xhtml"
+             xmlns:f="http://xmlns.jcp.org/jsf/core">  
+
+    <ui:define name="conteudo">
+        <div class="inner">
+            <header class="major">
+                <h1>Hi, you're at Arllaynexpress</h1>
+            </header>
+
+        </div>
+        <section>
+
+            <div class="field half first">
+                <label for="horario">Horario</label> 
+
+                <h:selectOneRadio value="#{mbCadastrarVoos.voos.horario}">
+                    <f:selectItem itemValue="07:00" itemLabel="07:00" />
+                    <f:selectItem itemValue="09:00" itemLabel="09:00" />
+                    <f:selectItem itemValue="12:00" itemLabel="12:00" />
+                    <f:selectItem itemValue="15:00" itemLabel="15:00" />
+                    <f:selectItem itemValue="18:00" itemLabel="18:00" />
+                    <f:selectItem itemValue="21:00" itemLabel="21:00" />
+                    <f:selectItem itemValue="00:00" itemLabel="00:00" />
+                </h:selectOneRadio>
+            </div>
+             
+           <div class="field half first">
+                <label for="origem">Origem</label> 
+
+                <h:selectOneRadio value="#{mbCadastrarVoos.voos.origem}">
+                    <f:selectItem itemValue="Parnaiba" itemLabel="Parnaiba" />
+                    <f:selectItem itemValue="Porto Velho" itemLabel="Porto Velho" />
+                    <f:selectItem itemValue="Fortaleza" itemLabel="Fortaleza" />
+                    <f:selectItem itemValue="São Luis" itemLabel="São Luis" />
+                    <f:selectItem itemValue="Juiz de Fora" itemLabel="Juiz de Fora" />
+                    <f:selectItem itemValue="Brasilia" itemLabel="Brasilia" />
+                    <f:selectItem itemValue="Teresina" itemLabel="Teresina" />
+                </h:selectOneRadio>
+            </div>
+
+<div class="field half first">
+                <label for="destino">Destino</label> 
+
+                <h:selectOneRadio value="#{mbCadastrarVoos.voos.destino}">
+                    <f:selectItem itemValue="Parnaiba" itemLabel="Parnaiba" />
+                    <f:selectItem itemValue="Porto Velho" itemLabel="Porto Velho" />
+                    <f:selectItem itemValue="Fortaleza" itemLabel="Fortaleza" />
+                    <f:selectItem itemValue="São Luis" itemLabel="São Luis" />
+                    <f:selectItem itemValue="Juiz de Fora" itemLabel="Juiz de Fora" />
+                    <f:selectItem itemValue="Brasilia" itemLabel="Brasilia" />
+                    <f:selectItem itemValue="Teresina" itemLabel="Teresina" />
+                </h:selectOneRadio>
+            </div>
+
+            <ul class="actions">
+                <li>
+                    <h:commandButton value="Cadastrar" 
+                                     action="#{mbCadastrarVoos.adicionar()}" >
+                        <!--<p:resetInput target="panel" />-->
+                    </h:commandButton>
+                </li>
+                <li>
+                    <h:commandButton value="Reset Non-Ajax" immediate="true" style="margin-right:20px;">
+                        <p:resetInput target="panel" />
+                    </h:commandButton>
+                </li>
+            </ul>
+
+        </section>
+    </ui:define>
+</ui:decorate>  
